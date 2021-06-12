@@ -28,7 +28,6 @@ const (
 	RPAREN = ")"
 	LBRACE = "{"
 	RBRACE = "}"
-	
 	//keyword
 	FUNCTION = "FUCNTION"
 	LET	= "LET"
