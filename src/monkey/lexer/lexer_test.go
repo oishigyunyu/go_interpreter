@@ -7,7 +7,7 @@ import (
 )
 
 func TestNextToken(t *testing.T) {
-	input :=　`let five = 5;
+	input := `let five = 5;
 let ten = 10;
 
 let add = fn(x, y) {
@@ -39,6 +39,7 @@ let result = add(five, ten);
 		{token.IDENT, "x"},
 		{token.COMMA, ","},
 		{token.IDENT, "y"},
+		{token.RPAREN, ")"},
 		{token.LBRACE, "{"},
 		{token.IDENT, "x"},
 		{token.PLUS, "+"}, 
