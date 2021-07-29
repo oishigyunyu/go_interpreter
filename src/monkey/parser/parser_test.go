@@ -32,7 +32,8 @@ func TestParsingPrefixExpressions(t *testing.T) {
 			t.Fatalf("program.Statements[0] is not ast.ExpressionStatement. got=%T", program.Statements[0])
 		}
 
-		exp, ok != stmt.Expression.(*ast.PrefixExpression)
+		exp, ok := stmt.Expression.(*ast.PrefixExpression)
+
 		if !ok {
 			t.Fatalf("stmt is not ast.PrefixExpressoin. got=%T", stmt.Expression)
 		}
@@ -42,6 +43,7 @@ func TestParsingPrefixExpressions(t *testing.T) {
 		if !testIntegerLiteral(t, exp.Right, tt.integervalue) {
 			return
 		}
+
 	}
 }
 
