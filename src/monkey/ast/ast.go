@@ -68,12 +68,12 @@ func (rs *ReturnStatement) StatementNode()       {}
 func (rs *ReturnStatement) TokenLiteral() string { return rs.Token.Literal }
 
 type ExpressionStatement struct {
-	token      token.Token //式の最初のトークン
+	Token      token.Token //式の最初のトークン
 	Expression Expression
 }
 
 func (es *ExpressionStatement) StatementNode()       {}
-func (es *ExpressionStatement) TokenLiteral() string { return es.token.Literal }
+func (es *ExpressionStatement) TokenLiteral() string { return es.Token.Literal }
 
 func (ls *LetStatement) String() string {
 	var out bytes.Buffer
@@ -110,3 +110,12 @@ func (es *ExpressionStatement) String() string {
 	}
 	return ""
 }
+
+type IntegerLiteral struct {
+	Token token.Token
+	Value int64
+}
+
+func (il *IntegerLiteral) expressionNode()      {}
+func (il *IntegerLiteral) TokenLiteral() string { return il.Token.Literal }
+func (il *IntegerLiteral) String() string       { return il.Token.Literal }
