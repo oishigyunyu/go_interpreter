@@ -199,7 +199,6 @@ func (p *Parser) parseExpression(precedence int) ast.Expression {
 
 		leftExp = infix(leftExp)
 
-		return leftExp
 	}
 
 	return leftExp
@@ -264,6 +263,7 @@ func (p *Parser) parseInfixExpression(left ast.Expression) ast.Expression {
 
 	precedence := p.curPrecedence()
 	p.nextToken()
+
 	expression.Right = p.parseExpression(precedence)
 
 	return expression
