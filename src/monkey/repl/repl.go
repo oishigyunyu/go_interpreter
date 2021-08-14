@@ -4,9 +4,9 @@ import (
 	"bufio"
 	"fmt"
 	"io"
-	"monkey/evaluator"
-	"monkey/lexer"
-	"monkey/parser"
+	"github.com/oishigyunyu/go_interpreter/evaluator"
+	"github.com/oishigyunyu/go_interpreter/lexer"
+	"github.com/oishigyunyu/go_interpreter/parser"
 )
 
 const PROMPT = ">> "

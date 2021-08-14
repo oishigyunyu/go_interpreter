@@ -2,8 +2,8 @@ package evaluator
 
 import (
 	"fmt"
-	"monkey/ast"
-	"monkey/object"
+	"github.com/oishigyunyu/go_interpreter/ast"
+	"github.com/oishigyunyu/go_interpreter/object"
 )
 
 var (
