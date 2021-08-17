@@ -1,15 +1,16 @@
 package evaluator
 
 import (
+	"testing"
+
 	"github.com/oishigyunyu/go_interpreter/lexer"
 	"github.com/oishigyunyu/go_interpreter/object"
 	"github.com/oishigyunyu/go_interpreter/parser"
-	"testing"
 )
 
 func TestLetStatements(t *testing.T) {
 	tests := []struct {
-		input string
+		input    string
 		expected int64
 	}{
 		{"let a = 5; a;", 5},
@@ -213,12 +214,13 @@ func TestEvalIntegerExpression(t *testing.T) {
 		testIntegerObject(t, evaluated, tt.expected)
 	}
 }
+
 func testEval(input string) object.Object {
 	l := lexer.New(input)
 	p := parser.New(l)
 	program := p.ParseProgram()
-
-	return Eval(program)
+	env := object.NewEnvironment()
+	return Eval(program, env)
 }
 
 func testIntegerObject(t *testing.T, obj object.Object, expected int64) bool {
