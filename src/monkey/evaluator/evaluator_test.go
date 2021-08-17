@@ -66,7 +66,7 @@ if (10 > 1) {
 		},
 		{
 			"foobar;",
-			"identifier not foun: foobar",
+			"identifier not found: foobar",
 		},
 	}
 
