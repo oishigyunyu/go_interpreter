@@ -2,8 +2,9 @@ package ast
 
 import (
 	"bytes"
-	"github.com/oishigyunyu/go_interpreter/token"
 	"strings"
+
+	"github.com/oishigyunyu/go_interpreter/token"
 )
 
 func (p *Program) String() string {
@@ -259,3 +260,12 @@ func (ce *CallExpression) String() string {
 
 	return out.String()
 }
+
+type StringLiteral struct {
+	Token token.Token
+	Value string
+}
+
+func (sl *StringLiteral) expressionNode()      {}
+func (sl *StringLiteral) TokenLiteral() string { return sl.Token.Literal }
+func (sl *StringLiteral) String() string       { return sl.Token.Literal }
